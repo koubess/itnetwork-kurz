@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Projekt</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/styl.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Projekt.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md bg-dark py-8 navbar-dark">
+            <a class="navbar-brand text-white mx-3" asp-controller="Home" asp-action="Index">PojištěníApp</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-md-center align-content-center" id="main-nav">
+                <div class="justify-content-md-center">
+                    <ul class="navbar-nav ml-5 ">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item ">
+                                <a class="nav-link navbar-barva mx-2" asp-controller="Clients" asp-action="Index">Pojištěnci</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link navbar-barva mx-2" asp-controller="Insurances" asp-action="Index">Pojištění</a>
+                            </li>
+                        }                        
+                        
+                        <li class="nav-item">
+                            <a class="nav-link navbar-barva mx-2" asp-controller="Home" asp-action="Udalosti">Události</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link navbar-barva mx-2" asp-controller="Home" asp-action="OAplikaci">O aplikaci</a>
+                        </li>                                                               
+                    </ul>
+                </div>                
+            </div>       
+            <div class="collapse navbar-collapse justify-content-md-end mx-sm-2" id="main-nav">
+                <partial name="_LoginPartial" />
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - Projekt - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewData["Title"] = "Udalosti";
+}
+
+<section class="col-6 offset-3">
+    <div class="card karta text-center my-4">
+        <div class="card-header">
+            Featured
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Novinka</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Přejít na článek</a>
+        </div>
+        <div class="card-footer text-muted">
+            @{
+                DateTime date = new DateTime();
+                date = DateTime.Today;
+            }
+            @date.ToShortDateString()
+        </div>
+    </div>
+    <div class="row my-4 py-2">
+        <div class="col-sm-6">
+            <div class="card karta">
+                <div class="card-body">
+                    <h5 class="card-title">Nadpis</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a asp-action="Index" class="btn btn-primary">Přejít na článek</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card karta">
+                <div class="card-body">
+                    <h5 class="card-title">Nadpis</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Přejít na článek</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row my-4">
+        <div class="col-sm-6">
+            <div class="card karta">
+                <div class="card-body">
+                    <h5 class="card-title">Nadpis</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Přejít na článek</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card karta">
+                <div class="card-body">
+                    <h5 class="card-title">Nadpis</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Přejít na článek</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card karta">
+                <div class="card-body">
+                    <h5 class="card-title">Nadpis</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Přejít na článek</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card karta">
+                <div class="card-body">
+                    <h5 class="card-title">Nadpis</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Přejít na článek</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

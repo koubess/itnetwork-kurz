@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Projekt.Models.Client>
+
+@{
+    ViewData["Title"] = "Pojištěnci";
+}
+
+<h1>Pojištěnci</h1>
+<div class="container text-center">
+    @if (User.IsInRole(UserRoles.Admin))
+    {
+        <button class="btn btn-primary my-3 justify-content-center">
+            <a class="text-white" style="text-decoration: none" asp-action="Create">Vytvořit Nového pojištěnce</a>
+        </button>
+
+    }
+
+    <table class="table table-hover table-bordered border-dark text-start">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Adress)
+                </th>         
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td style="vertical-align: central; width: 20em">
+                        @Html.DisplayFor(modelItem => item.Name) @Html.DisplayFor(modelItem => item.Surname)
+                    </td style="vertical-align: central">
+                    <td style="width: 20em">
+                        @Html.DisplayFor(modelItem => item.Adress), @Html.DisplayFor(modelItem => item.City)
+                    </td>
+                    <td style="width: 16em">
+                        @if (User.IsInRole(UserRoles.Admin)) 
+                        {                        
+                                <a class="mx-1 text-dark" class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" asp-action="Edit" asp-route-id="@item.Id">Upravit</a>                        
+                        }
+                    
+                            <a class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" asp-action="Details" asp-route-id="@item.Id">Detaily</a>
+                    
+                        @if (User.IsInRole(UserRoles.Admin))                  
+                        {                        
+                                <a class="mx-1 text-dark" class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" asp-action="Delete" asp-route-id="@item.Id">Vymazat</a>                        
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+ </div>

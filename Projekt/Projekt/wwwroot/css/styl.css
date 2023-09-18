@@ -1,0 +1,30 @@
+﻿body {
+}
+
+.navbar-barva{
+    color: rgb(243, 243, 243);
+}
+
+.pozadi {
+    transition: all ease-in-out 0.5s;
+    border-radius: 3em;
+}
+
+.pozadi:hover,
+.pozadi:focus{
+    background-color: rgba(32, 32, 32, 1);
+    border-radius: 3em;   
+
+    color: white;
+}
+
+.karta {
+    border-radius: 15px;
+    transition:ease-in-out 0.5s;
+}
+
+.karta:hover,
+.karta:focus{
+    border:solid rgb(0, 0, 0) 1px;
+    
+}

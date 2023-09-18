@@ -1,0 +1,114 @@
+﻿@using Projekt
+@model ClientInsuranceViewModel
+
+@{
+    ViewData["Title"] = "Detaily";
+    
+}
+
+<h1>Detaily</h1>
+
+<div>
+    <h4>Pojištěnec</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.client.Id)
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.client.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.client.Name)
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.client.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.client.Surname)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.client.Surname)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.client.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.client.Email)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.client.PhoneNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.client.PhoneNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.client.City)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.client.City)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.client.Adress)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.client.Adress)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.client.Psc)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.client.Psc)
+        </dd>
+    </dl>
+</div>
+
+<section>
+    <h4>Pojištění</h4>
+    <table class="table">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.client.Name)
+                @Html.DisplayNameFor(model => model.client.Surname)
+            </th>
+            <th>@Html.DisplayNameFor(model => model.insurance.InsuranceType)</th>
+            <th>@Html.DisplayNameFor(model => model.insurance.InsuredObject)</th>
+            <th>@Html.DisplayNameFor(model => model.insurance.InsuredFrom)</th>
+            <th>@Html.DisplayNameFor(model => model.insurance.InsuredTo)</th>
+            <th></th>
+        </tr>
+        @foreach(Insurance item in Model.Insurances)
+        {
+            if (item.ClientId == Model.client.Id)
+            {
+               
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Client.Name)
+                        @Html.DisplayFor(modelItem => item.Client.Surname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.InsuranceType)
+                    </td>                    
+                    <td>
+                        @Html.DisplayFor(modelItem => item.InsuredObject)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.InsuredFrom)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.InsuredTo)
+                    </td>
+                    <td>
+                        <a asp-controller="Insurances" asp-action="Edit" asp-route-id="@item.Id">Upravit</a> |
+                        <a asp-controller="Insurances" asp-action="Details" asp-route-id="@item.Id">Detaily</a> |
+                        <a asp-controller="Insurances" asp-action="Delete" asp-route-id="@item.Id">Vymazat</a>
+                    </td>
+                </tr>
+            }
+        }          
+        
+    </table>
+
+    <div class="text-center">
+        <button class="btn btn-primary"><a asp-controller="Insurances" asp-action="Create" asp-route-id="@Model?.client.Id" style="text-decoration:none;color:white">Vytvořit nové pojištění </a></button>
+    </div>
+
+</section>

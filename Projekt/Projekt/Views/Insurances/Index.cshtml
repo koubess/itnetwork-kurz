@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Projekt.Models.Insurance>
+
+@{
+    ViewData["Title"] = "Pojištění";
+}
+
+<h1>Pojištění</h1>
+
+<div class="text-center">
+    <button class="btn btn-primary my-3">
+        <a asp-action="Create" style="text-decoration:none;color:white">Vytvořit nové pojištění</a>
+    </button>
+</div>
+
+<table class="table table-hover table-bordered border-dark text-start">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Client)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InsuranceType)
+            </th>            
+            <th>
+                @Html.DisplayNameFor(model => model.InsuredObject)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InsuredFrom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InsuredTo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Client.Name)
+                @Html.DisplayFor(modelItem => item.Client.Surname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InsuranceType)
+            </td>            
+            <td>
+                @Html.DisplayFor(modelItem => item.InsuredObject)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InsuredFrom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InsuredTo)
+            </td>
+            <td>
+                    @if (User.IsInRole(UserRoles.Admin))
+                    {
+                        <a class="text-dark" asp-action="Edit" asp-route-id="@item.Id">upravit</a>
+                    }               
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <a class="text-dark mx-1" asp-action="Details" asp-route-id="@item.Id">Detaily</a>
+                    }
+                    @if (User.IsInRole(UserRoles.Admin))
+                    {
+                        <a class="text-dark" asp-action="Delete" asp-route-id="@item.Id"> Vymazat</a>
+                    }                
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
