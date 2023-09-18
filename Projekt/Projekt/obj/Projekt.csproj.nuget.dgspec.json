@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jakub\\OneDrive\\Plocha\\visual studio\\Projekt\\Projekt\\Projekt.csproj": {}
+    "C:\\Users\\jakub\\OneDrive\\Dokumenty\\GitHub\\itnetwork-kurz\\Projekt\\Projekt\\Projekt.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jakub\\OneDrive\\Plocha\\visual studio\\Projekt\\Projekt\\Projekt.csproj": {
+    "C:\\Users\\jakub\\OneDrive\\Dokumenty\\GitHub\\itnetwork-kurz\\Projekt\\Projekt\\Projekt.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jakub\\OneDrive\\Plocha\\visual studio\\Projekt\\Projekt\\Projekt.csproj",
+        "projectUniqueName": "C:\\Users\\jakub\\OneDrive\\Dokumenty\\GitHub\\itnetwork-kurz\\Projekt\\Projekt\\Projekt.csproj",
         "projectName": "Projekt",
-        "projectPath": "C:\\Users\\jakub\\OneDrive\\Plocha\\visual studio\\Projekt\\Projekt\\Projekt.csproj",
+        "projectPath": "C:\\Users\\jakub\\OneDrive\\Dokumenty\\GitHub\\itnetwork-kurz\\Projekt\\Projekt\\Projekt.csproj",
         "packagesPath": "C:\\Users\\jakub\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jakub\\OneDrive\\Plocha\\visual studio\\Projekt\\Projekt\\obj\\",
+        "outputPath": "C:\\Users\\jakub\\OneDrive\\Dokumenty\\GitHub\\itnetwork-kurz\\Projekt\\Projekt\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jakub\\AppData\\Roaming\\NuGet\\NuGet.Config",

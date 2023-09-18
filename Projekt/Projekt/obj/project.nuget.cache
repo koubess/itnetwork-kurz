@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "d43PbYSkmR2a/ma3b9NMVX4k7gG6MZI+G2W47IjSYEkcnW313YMTcceVi3AfSSDp/ADS5Bt8ohniWqbOC/CP7Q==",
+  "dgSpecHash": "tpqHomcKiffwoFuzhyh8U80RmTUzlJjy1MMFX8U9mfE8/XnGQP1iJsTfqi+qxTgltveNcgYeYbhqGbjcYIWo9w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jakub\\OneDrive\\Plocha\\visual studio\\Projekt\\Projekt\\Projekt.csproj",
+  "projectFilePath": "C:\\Users\\jakub\\OneDrive\\Dokumenty\\GitHub\\itnetwork-kurz\\Projekt\\Projekt\\Projekt.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jakub\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\jakub\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
