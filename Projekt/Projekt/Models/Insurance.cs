@@ -8,7 +8,7 @@ namespace Projekt.Models
         public int Id { get; set; }
        
         [ForeignKey("Client")]
-        [Display(Name = "Id pojištěnece")]
+        [Display(Name = "Id pojištěnce")]
         public int ClientId { get; set; } = 0;
         [Display(Name = "Pojištěnec")]
         public virtual Client Client { get; set; }

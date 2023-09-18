@@ -25,7 +25,7 @@ namespace Projekt.Controllers
         // GET: Clients
         public async Task<IActionResult> Index()
         {
-              return _context.Client != null ? 
+            return _context.Client != null ?
                           View(await _context.Client.ToListAsync()) :
                           Problem("Entity set 'ApplicationDbContext.Client'  is null.");
         }

@@ -8,7 +8,7 @@ namespace Projekt.Models
         public int Id { get; set; }
 
         [Required(ErrorMessage ="Zadejte jméno ")]
-        [Display(Name="Jmeno")]
+        [Display(Name="Jméno")]
         public string Name { get; set; } = "";
 
         [Required(ErrorMessage = "Zadejte příjmení")]
@@ -34,7 +34,7 @@ namespace Projekt.Models
         public string Adress { get; set; } = "";
 
         [Required(ErrorMessage = "Zadejte Poštovní směrovací číslo")]
-        [Display(Name = "Psč")]
+        [Display(Name = "Psč")]        
         public int Psc { get; set; } = 0;
 
     }

@@ -4,10 +4,10 @@
     ViewData["Title"] = "Detaily";
 }
 
-<h1>Detaily</h1>
+<h1>Detaily pojištění</h1>
 
 <div>
-    <h4>Pojištění</h4>
+    
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -50,6 +50,10 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Upravit</a> |
-    <a asp-action="Index">Zpět na list</a>
+    @if (User.IsInRole(UserRoles.Admin))
+    {
+        <a class="text-decoration-underline text-black mx-2" asp-action="Edit" asp-route-id="@Model?.Id">Upravit</a>
+    }
+
+    <a class="text-decoration-underline text-black" asp-action="Index">Zpět na list</a>
 </div>

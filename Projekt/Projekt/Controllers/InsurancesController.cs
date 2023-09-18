@@ -100,7 +100,7 @@ namespace Projekt.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (insurance.ClientId != null)
             {
                 try
                 {

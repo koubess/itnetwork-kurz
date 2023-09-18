@@ -97,9 +97,17 @@
                         @Html.DisplayFor(modelItem => item.InsuredTo)
                     </td>
                     <td>
-                        <a asp-controller="Insurances" asp-action="Edit" asp-route-id="@item.Id">Upravit</a> |
-                        <a asp-controller="Insurances" asp-action="Details" asp-route-id="@item.Id">Detaily</a> |
-                        <a asp-controller="Insurances" asp-action="Delete" asp-route-id="@item.Id">Vymazat</a>
+                        @if (User.IsInRole(UserRoles.Admin))
+                        {
+                            <a class="text-decoration-underline text-black" asp-controller="Insurances" asp-action="Edit" asp-route-id="@item.Id">Upravit</a>
+                        }
+
+                        <a class="mx-3 text-decoration-underline text-black" asp-controller="Insurances" asp-action="Details" asp-route-id="@item.Id">Detaily</a> 
+
+                        @if (User.IsInRole(UserRoles.Admin))
+                        {
+                            <a class="text-decoration-underline text-black" asp-controller="Insurances" asp-action="Delete" asp-route-id="@item.Id">Vymazat</a>
+                        }
                     </td>
                 </tr>
             }
@@ -108,7 +116,7 @@
     </table>
 
     <div class="text-center">
-        <button class="btn btn-primary"><a asp-controller="Insurances" asp-action="Create" asp-route-id="@Model?.client.Id" style="text-decoration:none;color:white">Vytvořit nové pojištění </a></button>
+        <button class="btn btn-primary"><a asp-controller="Insurances" asp-action="Create" style="text-decoration:none;color:white">Vytvořit nové pojištění </a></button>
     </div>
 
 </section>
