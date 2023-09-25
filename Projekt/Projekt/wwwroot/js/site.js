@@ -3,3 +3,12 @@
 
 // Write your JavaScript code.
 
+function LoginAdmin(){
+    document.getElementById("Email").value = "admin@projekt.cz"; 
+    document.getElementById("Password").value = "Password1";
+}
+
+function LoginClient() {
+    document.getElementById("Email").value = "pojistenec@email.cz"
+    document.getElementById("Password").value = "Password1"
+}
