@@ -161,6 +161,11 @@ namespace Projekt.Controllers
             }                                                                                                                
             return View(vm);
         }
+
+        public async Task<IActionResult> ShowSearchResult(string searchPhrase)
+        {
+            return View("Index", await _context.Client.Where(c => c.Name.Contains(searchPhrase) || c.Surname.Contains(searchPhrase)).ToListAsync());
+        }
             
     }
 }
